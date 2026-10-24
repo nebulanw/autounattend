@@ -1,0 +1,5 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_USERS\DefaultUser\Control Panel\Accessibility\Keyboard Response]
+; disable Filter Keys shortcut
+"Flags"="122"

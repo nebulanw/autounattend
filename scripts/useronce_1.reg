@@ -1,0 +1,89 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CURRENT_USER\Control Panel\International\User Profile]
+; disable "Let websites show me locally relevant content by accessing my language list"
+"HttpAcceptLanguageOptOut"=dword:00000001
+
+[HKEY_CURRENT_USER\SOFTWARE\Classes\Local Settings\Software\Microsoft\Windows\Shell\Bags\AllFolders\Shell]
+; disable Explorer media discovery
+"FolderType"="NotSpecified"
+
+[HKEY_CURRENT_USER\Software\Microsoft\Clipboard]
+; enable Win+V history
+"EnableClipboardHistory"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\CrossDeviceResume\Configuration]
+; disable CrossDeviceResume
+"IsResumeAllowed"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\CDP]
+; disable "Share across devices"
+"CdpSessionUserAuthzPolicy"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer]
+; disable "Show files from Office.com"
+"ShowCloudFilesInQuickAccess"=dword:00000000
+; disable "Show frequently used folders"
+"ShowFrequent"=dword:00000000
+; disable "Show recently used files"
+"ShowRecent"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+; enable "Use check boxes to select items"
+"AutoCheckSelect"=dword:00000001
+; disable "Show snap layouts when I hover over a window's maximize button"
+"EnableSnapAssistFlyout"=dword:00000000
+; disable "Show snap layouts when I drag a window to the top of my screen"
+"EnableSnapBar"=dword:00000000
+; enable "Show seconds in system tray clock"
+"ShowSecondsInSystemClock"=dword:00000001
+; disable "Show account-related notifications"
+"Start_AccountNotifications"=dword:00000000
+; disable "Show recommendations for tips, shortcuts, new apps, and more"
+"Start_IrisRecommendations"=dword:00000000
+; disable "Show websites from your browsing history"
+"Start_RecoPersonalizedSites"=dword:00000000
+; disable "Show recommended files in Start, recent files in File Explorer, and items in Jump Lists"
+"Start_TrackDocs"=dword:00000000
+; disable "Improve Start and search results" / "Let Windows improve Start and search results by tracking which apps I open"
+"Start_TrackProgs"=dword:00000000
+; disable "Share any window from my taskbar"
+"TaskbarSn"=dword:00000000
+; enable "Decrease space between items (compact view)"
+"UseCompactMode"=dword:00000001
+; set small taskbar icons
+"TaskbarSize"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\AutoplayHandlers]
+; disable AutoPlay (settings/control panel UI)
+"DisableAutoplay"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Notifications\Settings\Windows.ActionCenter.SmartOptOut]
+; disable Notification Suggestions (i.e. "Turn off notifications from <app>?")
+"Enabled"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Notifications\Settings\Windows.SystemToast.Suggested]
+; disable Suggested notification ads
+"Enabled"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\SearchSettings]
+; disable "Search my accounts: Work or School account"
+"IsAADCloudSearchEnabled"=dword:00000000
+; disable "Search history"
+"IsDeviceSearchHistoryEnabled"=dword:00000000
+; disable "Search my accounts: Microsoft account"
+"IsMSACloudSearchEnabled"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Start]
+; disable recent files list
+"ShowRecentList"=dword:00000000
+; set Start Menu size to Small
+"StartMenuSize"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\SystemSettings\AccountNotifications]
+; disable "Show me notifications in the Settings app"
+"EnableAccountNotifications"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\UserProfileEngagement]
+; disable second-chance OOBE (scoobe) aka "Let's finish setting up your device" prompt
+"ScoobeSystemSettingEnabled"=dword:00000000

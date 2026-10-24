@@ -1,0 +1,237 @@
+Windows Registry Editor Version 5.00
+
+; Microsoft Edge user.js
+; Based on Edge v157
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Edge]
+;; SECTION: Accessibility
+"AccessibilityImageLabelsEnabled"=dword:00000000
+
+;; SECTION: Address Bar
+"AddressBarTrendingSuggestEnabled"=dword:00000000
+"AddressBarWorkSearchResultsEnabled"=dword:00000000
+
+;; SECTION: Content settings
+"ShowPDFDefaultRecommendationsEnabled"=dword:00000000
+"SpotlightExperiencesAndRecommendationsEnabled"=dword:00000000
+
+;; SECTION: Copilot
+"CopilotPageContext"=dword:00000000
+"EdgeEntraCopilotPageContext"=dword:00000000
+"Microsoft365CopilotChatIconEnabled"=dword:00000000
+
+;; SECTION: Default search provider
+"NewTabPageSearchBox"="redirect"
+
+;; SECTION: Diagnostic Data
+"DiagnosticData"=dword:00000000
+"UrlDiagnosticDataEnabled"=dword:00000000
+
+;; SECTION: Downloads
+"PromptForDownloadLocation"=dword:00000001
+
+;; SECTION: Edge Website Typo Protection settings
+"TyposquattingCheckerEnabled"=dword:00000000
+
+;; SECTION: Edge Workspaces settings
+"EdgeWorkspacesEnabled"=dword:00000000
+
+;; SECTION: Extensions
+"EdgeSafeHostingExtensionEnabled"=dword:00000000
+
+;; SECTION: Generative AI
+"AIGenThemesEnabled"=dword:00000000
+;"GenAILocalFoundationalModelSettings"=dword:00000001
+
+;; SECTION: Identity and sign-in
+"EdgeDefaultProfileEnabled"="Default"
+"GuidedSwitchEnabled"=dword:00000000
+"ImplicitSignInEnabled"=dword:00000000
+"M365AuthPopupsInWorkEnabled"=dword:00000000
+"NonMicrosoftAccountSignInEnabled"=dword:00000000
+"ProactiveAuthWorkflowEnabled"=dword:00000000
+"SeamlessWebToBrowserSignInEnabled"=dword:00000000
+"WebToBrowserSignInEnabled"=dword:00000000
+
+;; SECTION: Import
+"ImportAutofillFormData"=dword:00000000
+"ImportBrowserSettings"=dword:00000000
+"ImportCookies"=dword:00000000
+"ImportExtensions"=dword:00000000
+"ImportFavorites"=dword:00000000
+"ImportHistory"=dword:00000000
+"ImportHomepage"=dword:00000000
+"ImportOnEachLaunch"=dword:00000000
+"ImportOpenTabs"=dword:00000000
+"ImportPaymentInfo"=dword:00000000
+"ImportSavedPasswords"=dword:00000000
+"ImportSearchEngine"=dword:00000000
+"ImportShortcuts"=dword:00000000
+"ImportStartupPageSettings"=dword:00000000
+
+;; SECTION: Manageability
+"EdgeManagementEnabled"=dword:00000000
+"EdgeManagementExtensionsFeedbackEnabled"=dword:00000000
+"MAMEnabled"=dword:00000000
+
+;; SECTION: Microsoft Office
+"QuickViewOfficeFilesEnabled"=dword:00000000
+
+;; SECTION: Network settings
+; You need to override this here to change DoH on managed Edge
+"DnsOverHttpsMode"="secure"
+"DnsOverHttpsTemplates"="https://freedns.controld.com/p0"
+"NetworkPredictionOptions"=dword:00000002
+
+;; SECTION: Password manager and protection
+"PasswordGeneratorEnabled"=dword:00000000
+"PasswordManagerEnabled"=dword:00000000
+"PasswordManagerPasskeysEnabled"=dword:00000000
+"PasswordMonitorAllowed"=dword:00000000
+"PasswordProtectionWarningTrigger"=dword:00000000
+"PasswordRevealEnabled"=dword:00000000
+
+;; SECTION: Performance
+"ExtensionsPerformanceDetectorEnabled"=dword:00000000
+"PerformanceDetectorEnabled"=dword:00000000
+"PinBrowserEssentialsToolbarButton"=dword:00000000
+"RAMResourceControlsEnabled"=dword:00000000
+"StartupBoostEnabled"=dword:00000000
+
+;; SECTION: Personalization
+"PersonalizationReportingEnabled"=dword:00000000
+"PersonalizeTopSitesInCustomizeSidebarEnabled"=dword:00000000
+
+;; SECTION: Scareware Blocker settings
+"ScarewareBlockerBlocksDetectedSitesEnabled"=dword:00000000
+"ScarewareBlockerProtectionEnabled"=dword:00000000
+"ScarewareBlockerSendDetectedSitesToSmartScreenEnabled"=dword:00000000
+
+;; SECTION: Startup, home page and new tab page
+; Completely breaks the NTP search bar
+;"NewTabPageAllowedBackgroundTypes"=dword:00000001
+"NewTabPageAppLauncherEnabled"=dword:00000000
+"NewTabPageBingChatEnabled"=dword:00000000
+"NewTabPageContentEnabled"=dword:00000000
+"NewTabPageHideDefaultTopSites"=dword:00000001
+"NewTabPagePrerenderEnabled"=dword:00000000
+"NewTabPageQuickLinksEnabled"=dword:00000000
+"ShowHomeButton"=dword:00000000
+
+;; SECTION: Additional
+"AADWebSiteSSOUsingThisProfileEnabled"=dword:00000000
+"AddressBarClipboardSuggestEnabled"=dword:00000000
+"AdsTransparencyEnabled"=dword:00000000
+"AllowBrowsingWithCopilot"=dword:00000000
+"AlternateErrorPagesEnabled"=dword:00000000
+"AutoImportAtFirstRun"=dword:00000004
+"AutofillAddressEnabled"=dword:00000000
+"AutofillCreditCardEnabled"=dword:00000000
+"AutofillMembershipsEnabled"=dword:00000000
+"AutofillSettings"="[{\"blocked_types\": [\"all\"], \"url_pattern\": \"*\"}]"
+
+"BackgroundModeEnabled"=dword:00000000
+"BingAdsSuppression"=dword:00000001
+"BrowserSignin"=dword:00000000
+;"BrowsingDataLifetime"
+;"BuiltInAIAPIsEnabled"=dword:00000000
+
+"ComposeInlineEnabled"=dword:00000000
+"ConfigureOnPremisesAccountAutoSignIn"=dword:00000000
+"ConfigureOnlineTextToSpeech"=dword:00000000
+"ConfigureShare"=dword:00000001
+"CopilotAddressBarSuggestionsEnabled"=dword:00000000
+"CopilotCoworkToolActionsEnabled"=dword:00000000
+"CopilotNewTabPageEnabled"=dword:00000000
+
+"DefaultBrowserSettingEnabled"=dword:00000000
+"DefaultBrowserSettingsCampaignEnabled"=dword:00000000
+"DefaultShareAdditionalOSRegionSetting"=dword:00000002
+
+"Edge3PSerpTelemetryEnabled"=dword:00000000
+"EdgeAssetDeliveryServiceEnabled"=dword:00000000
+"EdgeAutofillMlEnabled"=dword:00000000
+"EdgeEDropEnabled"=dword:00000000
+"EdgeHistoryAISearchEnabled"=dword:00000000
+"EdgeShoppingAssistantEnabled"=dword:00000000
+"EdgeWalletCheckoutEnabled"=dword:00000000
+"ExperimentationAndConfigurationServiceControl"=dword:00000000
+
+"FamilySafetySettingsEnabled"=dword:00000000
+
+"HideFirstRunExperience"=dword:00000001
+"HideInternetExplorerRedirectUXForIncompatibleSitesEnabled"=dword:00000001
+"HubsSidebarEnabled"=dword:00000000
+
+"InAppSupportEnabled"=dword:00000000
+
+"LaunchEdgeOnWindowsStartupEnabled"=dword:00000000
+"LiveVideoTranslationEnabled"=dword:00000000
+"LocalBrowserDataShareEnabled"=dword:00000000
+
+"M365LinksAutoOpenCopilotEnabled"=dword:00000000
+"MSAWebSiteSSOUsingThisProfileAllowed"=dword:00000000
+"MicrosoftEdgeInsiderPromotionEnabled"=dword:00000000
+"MicrosoftEditorProofingEnabled"=dword:00000000
+"MicrosoftEditorSynonymsEnabled"=dword:00000000
+"MouseGestureEnabled"=dword:00000000
+
+"NonRemovableProfileEnabled"=dword:00000000
+
+"PaymentMethodQueryEnabled"=dword:00000000
+"PinningWizardAllowed"=dword:00000000
+
+"QRCodeGeneratorEnabled"=dword:00000000
+"QuickSearchShowMiniMenu"=dword:00000000
+
+"ReadAloudEnabled"=dword:00000000
+"ResolveNavigationErrorsUseWebService"=dword:00000000
+
+"SavingBrowserHistoryDisabled"=dword:00000001
+;"SearchForImageEnabled"=dword:00000000
+"SearchInSidebarEnabled"=dword:00000002
+"SearchSuggestEnabled"=dword:00000000
+"SearchbarAllowed"=dword:00000000
+"SearchbarIsEnabledOnStartup"=dword:00000000
+"ShareBrowsingHistoryWithCopilotSearchAllowed"=dword:00000000
+"SharedLinksEnabled"=dword:00000000
+"ShowMicrosoftRewards"=dword:00000000
+"ShowRecommendationsEnabled"=dword:00000000
+"SpeechRecognitionEnabled"=dword:00000000
+"StandaloneHubsSidebarEnabled"=dword:00000000
+"SyncDisabled"=dword:00000001
+
+"TabServicesEnabled"=dword:00000000
+"TextPredictionEnabled"=dword:00000000
+
+"UploadFromPhoneEnabled"=dword:00000000
+"UserFeedbackAllowed"=dword:00000000
+
+"VisualSearchEnabled"=dword:00000000
+
+"WhatsNewPageForEntraProfilesEnabled"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Edge\Recommended]
+;; SECTION: Default search provider
+;"DefaultSearchProviderEnabled"=dword:00000001
+;"DefaultSearchProviderKeyword"="!d"
+;"DefaultSearchProviderName"="DuckDuckGo"
+;"DefaultSearchProviderSearchURL"="https://noai.duckduckgo.com/search?q={searchTerms}"
+
+;; SECTION: Performance
+;"EfficiencyMode"=dword:0000003
+
+;; SECTION: Printing
+"PrintHeaderFooter"=dword:00000000
+
+;; SECTION: Sleeping tabs settings
+"SleepingTabsEnabled"=dword:00000000
+
+; Edge WebView2
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Edge\WebView2]
+"ExperimentationAndConfigurationServiceControl"=dword:00000000
+
+; Edge Update
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\EdgeUpdate]
+"UpdaterExperimentationAndConfigurationServiceControl"=dword:00000000
+"Install{C50565E9-CCCF-44B4-BA15-5AC5C6569197}"=dword:00000000

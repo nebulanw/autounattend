@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <unattend xmlns="urn:schemas-microsoft-com:unattend" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State">
-	<!--https://schneegans.de/windows/unattend-generator/?LanguageMode=Unattended&UILanguage=en-US&Locale=en-US&Keyboard=00000409&GeoLocation=244&PEMode=Default&WindowsEditionMode=Generic&WindowsEdition=enterprise&ProcessorArchitecture=amd64&UseConfigurationSet=true&ComputerNameMode=Script&ComputerNameScript=return+Read-Host+-Prompt+%27Enter+computer+name%27%3B&TimeZoneMode=Implicit&UserAccountMode=Unattended&AccountName0=nebulanw&AccountDisplayName0=Harry&AccountPassword0=supertemppassword&AccountGroup0=Administrators&AutoLogonMode=Own&PasswordExpirationMode=Unlimited&LockoutMode=Default&HideFiles=None&ShowFileExtensions=true&ClassicContextMenu=true&LaunchToThisPC=true&TaskbarSearch=Hide&TaskbarIconsMode=Empty&LeftTaskbar=true&HideTaskViewButton=true&DisableBingResults=true&StartTilesMode=Default&StartPinsMode=Empty&DisableSac=true&DisableFastStartup=true&DisableAppSuggestions=true&PreventDeviceEncryption=true&HideEdgeFre=true&DisableEdgeStartupBoost=true&CoreIsolationMode=Enabled&DeleteWindowsOld=true&EffectsMode=Default&DesktopIconsMode=Custom&StartFoldersMode=Default&WifiMode=Interactive&ExpressSettings=DisableAll&LockKeysMode=Skip&StickyKeysMode=Disabled&ColorMode=Custom&SystemColorTheme=Dark&AppsColorTheme=Dark&AccentColor=%230078d4&EnableTransparency=true&WallpaperMode=Default&LockScreenMode=Default&RemoveBingSearch=true&RemoveClipchamp=true&RemoveCopilot=true&RemoveCortana=true&RemoveDevHome=true&RemoveFamily=true&RemoveFeedbackHub=true&RemoveGameAssist=true&RemoveGetHelp=true&RemoveMailCalendar=true&RemoveMaps=true&RemoveMixedReality=true&RemoveZuneVideo=true&RemoveNews=true&RemoveOffice365=true&RemoveOneDrive=true&RemoveOneNote=true&RemoveOutlook=true&RemovePaint3D=true&RemovePeople=true&RemovePhotos=true&RemovePowerAutomate=true&RemoveQuickAssist=true&RemoveRecall=true&RemoveSkype=true&RemoveSolitaire=true&RemoveStickyNotes=true&RemoveTeams=true&RemoveGetStarted=true&RemoveToDo=true&RemoveVoiceRecorder=true&RemoveWeather=true&RemoveWindowsMediaPlayer=true&RemoveZuneMusic=true&RemoveYourPhone=true&SystemScript0=Windows+Registry+Editor+Version+5.00%0D%0A%0D%0A%5BHKEY_LOCAL_MACHINE%5CSYSTEM%5CCurrentControlSet%5CControl%5CCrashControl%5D%0D%0A%3B+enable+bugcheck+parameters%0D%0A%22DisplayParameters%22%3Ddword%3A00000001%0D%0A%0D%0A%5BHKEY_LOCAL_MACHINE%5CSYSTEM%5CCurrentControlSet%5CControl%5CTimeZoneInformation%5D%0D%0A%3B+treat+BIOS+time+as+UTC%0D%0A%22RealTimeIsUniversal%22%3Ddword%3A00000001&SystemScriptType0=Reg&SystemScript1=%23+List+of+target+Appx+package+DisplayNames%0D%0A%24appsToRemove+%3D+%40%28%0D%0A++++%22Microsoft.GamingApp%22%2C%0D%0A++++%22Microsoft.Xbox.TCUI%22%2C%0D%0A++++%22MicrosoftWindows.Client.WebExperience%22%2C%0D%0A++++%22MicrosoftWindows.CrossDevice%22%2C%0D%0A++++%22Microsoft.Edge.GameAssist%22%2C%0D%0A++++%22Microsoft.StartExperiencesApp%22%0D%0A%29%0D%0A%0D%0Aforeach+%28%24app+in+%24appsToRemove%29+%7B%0D%0A++++Write-Host+%22Attempting+to+remove+%24app+...%22+-ForegroundColor+Cyan%0D%0A%0D%0A++++%23+Remove+for+current+user%28s%29%0D%0A++++Get-AppxPackage+-Name+%24app+-AllUsers+%7C+Remove-AppxPackage+-AllUsers+-ErrorAction+SilentlyContinue%0D%0A%0D%0A++++%23+Remove+provisioned+package+so+it+won%27t+install+for+new+users%0D%0A++++Get-AppxProvisionedPackage+-Online+%7C%0D%0A++++++++Where-Object+%7B+%24_.DisplayName+-eq+%24app+%7D+%7C%0D%0A++++++++ForEach-Object+%7B%0D%0A++++++++++++Write-Host+%22Removing+provisioned+package%3A+%24%28%24_.DisplayName%29%22+-ForegroundColor+Yellow%0D%0A++++++++++++Remove-AppxProvisionedPackage+-Online+-PackageName+%24_.PackageName+-ErrorAction+SilentlyContinue%0D%0A++++++++%7D%0D%0A%7D%0D%0A%0D%0AWrite-Host+%22Deprovisioning+complete.%22+-ForegroundColor+Green%0D%0A&SystemScriptType1=Ps1&SystemScript2=C%3A%5CWindows%5CSetup%5CScripts%5CLGPO.exe+%2Fm+C%3A%5CWindows%5CSetup%5CScripts%5Cregistry_machine.pol%0D%0AC%3A%5CWindows%5CSetup%5CScripts%5CLGPO.exe+%2Fu+C%3A%5CWindows%5CSetup%5CScripts%5Cregistry_user.pol&SystemScriptType2=Cmd&DefaultUserScript0=Windows+Registry+Editor+Version+5.00%0D%0A%0D%0A%5BHKEY_USERS%5CDefaultUser%5CControl+Panel%5CAccessibility%5CKeyboard+Response%5D%0D%0A%3B+disable+Filter+Keys+shortcut%0D%0A%22Flags%22%3D%22122%22%0D%0A&DefaultUserScriptType0=Reg&UserOnceScript0=Windows+Registry+Editor+Version+5.00%0D%0A%0D%0A%5BHKEY_CURRENT_USER%5CControl+Panel%5CInternational%5CUser+Profile%5D%0D%0A%3B+disable+%22Let+websites+show+me+locally+relevant+content+by+accessing+my+language+list%22%0D%0A%22HttpAcceptLanguageOptOut%22%3Ddword%3A00000001%0D%0A%0D%0A%5BHKEY_CURRENT_USER%5CSOFTWARE%5CClasses%5CLocal+Settings%5CSoftware%5CMicrosoft%5CWindows%5CShell%5CBags%5CAllFolders%5CShell%5D%0D%0A%3B+disable+Explorer+media+discovery%0D%0A%22FolderType%22%3D%22NotSpecified%22%0D%0A%0D%0A%5BHKEY_CURRENT_USER%5CSoftware%5CMicrosoft%5CClipboard%5D%0D%0A%3B+enable+Win%2BV+history%0D%0A%22EnableClipboardHistory%22%3Ddword%3A00000001%0D%0A%0D%0A%5BHKEY_CURRENT_USER%5CSoftware%5CMicrosoft%5CWindows%5CCurrentVersion%5CCrossDeviceResume%5CConfiguration%5D%0D%0A%3B+disable+CrossDeviceResume%0D%0A%22IsResumeAllowed%22%3Ddword%3A00000000%0D%0A%0D%0A%5BHKEY_CURRENT_USER%5CSoftware%5CMicrosoft%5CWindows%5CCurrentVersion%5CCDP%5D%0D%0A%3B+disable+%22Share+across+devices%22%0D%0A%22CdpSessionUserAuthzPolicy%22%3Ddword%3A00000000%0D%0A%0D%0A%5BHKEY_CURRENT_USER%5CSoftware%5CMicrosoft%5CWindows%5CCurrentVersion%5CExplorer%5D%0D%0A%3B+disable+%22Show+files+from+Office.com%22%0D%0A%22ShowCloudFilesInQuickAccess%22%3Ddword%3A00000000%0D%0A%3B+disable+%22Show+frequently+used+folders%22%0D%0A%22ShowFrequent%22%3Ddword%3A00000000%0D%0A%3B+disable+%22Show+recently+used+files%22%0D%0A%22ShowRecent%22%3Ddword%3A00000000%0D%0A%0D%0A%5BHKEY_CURRENT_USER%5CSoftware%5CMicrosoft%5CWindows%5CCurrentVersion%5CExplorer%5CAdvanced%5D%0D%0A%3B+enable+%22Use+check+boxes+to+select+items%22%0D%0A%22AutoCheckSelect%22%3Ddword%3A00000001%0D%0A%3B+disable+%22Show+snap+layouts+when+I+hover+over+a+window%27s+maximize+button%22%0D%0A%22EnableSnapAssistFlyout%22%3Ddword%3A00000000%0D%0A%3B+disable+%22Show+snap+layouts+when+I+drag+a+window+to+the+top+of+my+screen%22%0D%0A%22EnableSnapBar%22%3Ddword%3A00000000%0D%0A%3B+enable+%22Show+seconds+in+system+tray+clock%22%0D%0A%22ShowSecondsInSystemClock%22%3Ddword%3A00000001%0D%0A%3B+disable+%22Show+account-related+notifications%22%0D%0A%22Start_AccountNotifications%22%3Ddword%3A00000000%0D%0A%3B+disable+%22Show+recommendations+for+tips%2C+shortcuts%2C+new+apps%2C+and+more%22%0D%0A%22Start_IrisRecommendations%22%3Ddword%3A00000000%0D%0A%3B+disable+%22Show+websites+from+your+browsing+history%22%0D%0A%22Start_RecoPersonalizedSites%22%3Ddword%3A00000000%0D%0A%3B+disable+%22Show+recommended+files+in+Start%2C+recent+files+in+File+Explorer%2C+and+items+in+Jump+Lists%22%0D%0A%22Start_TrackDocs%22%3Ddword%3A00000000%0D%0A%3B+disable+%22Improve+Start+and+search+results%22+%2F+%22Let+Windows+improve+Start+and+search+results+by+tracking+which+apps+I+open%22%0D%0A%22Start_TrackProgs%22%3Ddword%3A00000000%0D%0A%3B+disable+%22Share+any+window+from+my+taskbar%22%0D%0A%22TaskbarSn%22%3Ddword%3A00000000%0D%0A%3B+enable+%22Decrease+space+between+items+%28compact+view%29%22%0D%0A%22UseCompactMode%22%3Ddword%3A00000001%0D%0A%0D%0A%5BHKEY_CURRENT_USER%5CSoftware%5CMicrosoft%5CWindows%5CCurrentVersion%5CExplorer%5CAutoplayHandlers%5D%0D%0A%3B+disable+AutoPlay+%28settings%2Fcontrol+panel+UI%29%0D%0A%22DisableAutoplay%22%3Ddword%3A00000001%0D%0A%0D%0A%5BHKEY_CURRENT_USER%5CSoftware%5CMicrosoft%5CWindows%5CCurrentVersion%5CNotifications%5CSettings%5CWindows.ActionCenter.SmartOptOut%5D%0D%0A%3B+disable+Notification+Suggestions+%28i.e.+%22Turn+off+notifications+from+%3Capp%3E%3F%22%29%0D%0A%22Enabled%22%3Ddword%3A00000000%0D%0A%0D%0A%5BHKEY_CURRENT_USER%5CSoftware%5CMicrosoft%5CWindows%5CCurrentVersion%5CNotifications%5CSettings%5CWindows.SystemToast.Suggested%5D%0D%0A%3B+disable+Suggested+notification+ads%0D%0A%22Enabled%22%3Ddword%3A00000000%0D%0A%0D%0A%5BHKEY_CURRENT_USER%5CSoftware%5CMicrosoft%5CWindows%5CCurrentVersion%5CSearchSettings%5D%0D%0A%3B+disable+%22Search+my+accounts%3A+Work+or+School+account%22%0D%0A%22IsAADCloudSearchEnabled%22%3Ddword%3A00000000%0D%0A%3B+disable+%22Search+history%22%0D%0A%22IsDeviceSearchHistoryEnabled%22%3Ddword%3A00000000%0D%0A%3B+disable+%22Search+my+accounts%3A+Microsoft+account%22%0D%0A%22IsMSACloudSearchEnabled%22%3Ddword%3A00000000%0D%0A%0D%0A%5BHKEY_CURRENT_USER%5CSoftware%5CMicrosoft%5CWindows%5CCurrentVersion%5CStart%5D%0D%0A%3B+disable+recent+files+list%0D%0A%22ShowRecentList%22%3Ddword%3A00000000%0D%0A%0D%0A%5BHKEY_CURRENT_USER%5CSoftware%5CMicrosoft%5CWindows%5CCurrentVersion%5CSystemSettings%5CAccountNotifications%5D%0D%0A%3B+disable+%22Show+me+notifications+in+the+Settings+app%22%0D%0A%22EnableAccountNotifications%22%3Ddword%3A00000000%0D%0A%0D%0A%5BHKEY_CURRENT_USER%5CSoftware%5CMicrosoft%5CWindows%5CCurrentVersion%5CUserProfileEngagement%5D%0D%0A%3B+disable+second-chance+OOBE+%28scoobe%29+aka+%22Let%27s+finish+setting+up+your+device%22+prompt%0D%0A%22ScoobeSystemSettingEnabled%22%3Ddword%3A00000000%0D%0A&UserOnceScriptType0=Reg&RestartExplorer=true&AppLockerMode=Skip&ComponentContent0=%3CComputerName%3ETEMPNAME%3C%2FComputerName%3E%0D%0A%3CRegisteredOrganization%3ESunrise+Foundation%3C%2FRegisteredOrganization%3E%0D%0A%3CRegisteredOwner%3EHarry%3C%2FRegisteredOwner%3E&Component0=Microsoft-Windows-Shell-Setup-specialize-->
+	<!--https://schneegans.de/windows/unattend-generator/?LanguageMode=Unattended&UILanguage=en-US&Locale=en-US&Keyboard=00000409&GeoLocation=244&PEMode=Default&WindowsEditionMode=Generic&WindowsEdition=enterprise&ProcessorArchitecture=amd64&UseConfigurationSet=true&ComputerNameMode=Script&ComputerNameScript=return+Read-Host+-Prompt+%27Enter+computer+name%27%3B&TimeZoneMode=Implicit&UserAccountMode=Unattended&AccountName0=nebulanw&AccountDisplayName0=Harry&AccountPassword0=supertemppassword&AccountGroup0=Administrators&AutoLogonMode=Own&PasswordExpirationMode=Unlimited&LockoutMode=Default&HideFiles=None&ShowFileExtensions=true&ClassicContextMenu=true&LaunchToThisPC=true&TaskbarSearch=Hide&TaskbarIconsMode=Empty&LeftTaskbar=true&HideTaskViewButton=true&DisableBingResults=true&StartTilesMode=Default&StartPinsMode=Empty&DisableSac=true&DisableFastStartup=true&DisableAppSuggestions=true&PreventDeviceEncryption=true&HideEdgeFre=true&DisableEdgeStartupBoost=true&DeleteWindowsOld=true&EffectsMode=Default&DeleteEdgeDesktopIcon=true&DesktopIconsMode=Custom&StartFoldersMode=Default&CoreIsolationMode=Enabled&WifiMode=Interactive&ExpressSettings=DisableAll&LockKeysMode=Skip&StickyKeysMode=Disabled&ColorMode=Custom&SystemColorTheme=Dark&AppsColorTheme=Dark&AccentColor=%230078d4&EnableTransparency=true&WallpaperMode=Default&LockScreenMode=Default&RemoveBingSearch=true&RemoveClipchamp=true&RemoveCopilot=true&RemoveCortana=true&RemoveDevHome=true&RemoveFamily=true&RemoveFeedbackHub=true&RemoveGameAssist=true&RemoveGetHelp=true&RemoveMailCalendar=true&RemoveMaps=true&RemoveMixedReality=true&RemoveZuneVideo=true&RemoveNews=true&RemoveOffice365=true&RemoveOneDrive=true&RemoveOneNote=true&RemoveOutlook=true&RemovePaint=true&RemovePaint3D=true&RemovePeople=true&RemovePhotos=true&RemovePowerAutomate=true&RemoveQuickAssist=true&RemoveRecall=true&RemoveSkype=true&RemoveSolitaire=true&RemoveStepsRecorder=true&RemoveStickyNotes=true&RemoveTeams=true&RemoveGetStarted=true&RemoveToDo=true&RemoveVoiceRecorder=true&RemoveWallet=true&RemoveWeather=true&RemoveZuneMusic=true&RemoveYourPhone=true&SystemScript0=Windows+Registry+Editor+Version+5.00%0D%0A%0D%0A%5BHKEY_LOCAL_MACHINE%5CSYSTEM%5CCurrentControlSet%5CControl%5CCrashControl%5D%0D%0A%3B+enable+bugcheck+parameters%0D%0A%22DisplayParameters%22%3Ddword%3A00000001%0D%0A%0D%0A%5BHKEY_LOCAL_MACHINE%5CSYSTEM%5CCurrentControlSet%5CControl%5CTimeZoneInformation%5D%0D%0A%3B+treat+BIOS+time+as+UTC%0D%0A%22RealTimeIsUniversal%22%3Ddword%3A00000001%0D%0A%0D%0A%5BHKEY_LOCAL_MACHINE%5CSOFTWARE%5CPolicies%5CWindowsNotepad%5D%0D%0A%3B+disable+Copilot+in+Notepad%0D%0A%22DisableAIFeatures%22%3Ddword%3A00000001%0D%0A&SystemScriptType0=Reg&SystemScript1=%23+List+of+target+Appx+package+DisplayNames%0D%0A%24appsToRemove+%3D+%40%28%0D%0A++++%22Microsoft.GamingApp%22%2C%0D%0A++++%22Microsoft.Xbox.TCUI%22%2C%0D%0A++++%22MicrosoftWindows.Client.WebExperience%22%2C%0D%0A++++%22MicrosoftWindows.CrossDevice%22%2C%0D%0A++++%22Microsoft.Edge.GameAssist%22%2C%0D%0A++++%22Microsoft.StartExperiencesApp%22%0D%0A%29%0D%0A%0D%0Aforeach+%28%24app+in+%24appsToRemove%29+%7B%0D%0A++++Write-Host+%22Attempting+to+remove+%24app+...%22+-ForegroundColor+Cyan%0D%0A%0D%0A++++%23+Remove+for+current+user%28s%29%0D%0A++++Get-AppxPackage+-Name+%24app+-AllUsers+%7C+Remove-AppxPackage+-AllUsers+-ErrorAction+SilentlyContinue%0D%0A%0D%0A++++%23+Remove+provisioned+package+so+it+won%27t+install+for+new+users%0D%0A++++Get-AppxProvisionedPackage+-Online+%7C%0D%0A++++++++Where-Object+%7B+%24_.DisplayName+-eq+%24app+%7D+%7C%0D%0A++++++++ForEach-Object+%7B%0D%0A++++++++++++Write-Host+%22Removing+provisioned+package%3A+%24%28%24_.DisplayName%29%22+-ForegroundColor+Yellow%0D%0A++++++++++++Remove-AppxProvisionedPackage+-Online+-PackageName+%24_.PackageName+-ErrorAction+SilentlyContinue%0D%0A++++++++%7D%0D%0A%7D%0D%0A%0D%0AWrite-Host+%22Deprovisioning+complete.%22+-ForegroundColor+Green%0D%0A%0D%0A%23+Block+GIFs%0D%0ANew-NetFirewallRule+-DisplayName+%22%5BDisable+GIPHY%5D+TextInputHost.exe%22+-Direction+Outbound+-Program+%22C%3A%5CWindows%5CSystemApps%5CMicrosoftWindows.Client.CBS_cw5n1h2txyewy%5CTextInputHost.exe%22+-Action+Block+-Profile+Any%0D%0A&SystemScriptType1=Ps1&SystemScript2=C%3A%5CWindows%5CSetup%5CScripts%5CLGPO.exe+%2Fm+C%3A%5CWindows%5CSetup%5CScripts%5Cregistry_machine.pol%0D%0AC%3A%5CWindows%5CSetup%5CScripts%5CLGPO.exe+%2Fu+C%3A%5CWindows%5CSetup%5CScripts%5Cregistry_user.pol&SystemScriptType2=Cmd&SystemScript3=Windows+Registry+Editor+Version+5.00%0D%0A%0D%0A%3B+Microsoft+Edge+user.js%0D%0A%3B+Based+on+Edge+v157%0D%0A%0D%0A%5BHKEY_LOCAL_MACHINE%5CSOFTWARE%5CPolicies%5CMicrosoft%5CEdge%5D%0D%0A%3B%3B+SECTION%3A+Accessibility%0D%0A%22AccessibilityImageLabelsEnabled%22%3Ddword%3A00000000%0D%0A%0D%0A%3B%3B+SECTION%3A+Address+Bar%0D%0A%22AddressBarTrendingSuggestEnabled%22%3Ddword%3A00000000%0D%0A%22AddressBarWorkSearchResultsEnabled%22%3Ddword%3A00000000%0D%0A%0D%0A%3B%3B+SECTION%3A+Content+settings%0D%0A%22ShowPDFDefaultRecommendationsEnabled%22%3Ddword%3A00000000%0D%0A%22SpotlightExperiencesAndRecommendationsEnabled%22%3Ddword%3A00000000%0D%0A%0D%0A%3B%3B+SECTION%3A+Copilot%0D%0A%22CopilotPageContext%22%3Ddword%3A00000000%0D%0A%22EdgeEntraCopilotPageContext%22%3Ddword%3A00000000%0D%0A%22Microsoft365CopilotChatIconEnabled%22%3Ddword%3A00000000%0D%0A%0D%0A%3B%3B+SECTION%3A+Default+search+provider%0D%0A%22NewTabPageSearchBox%22%3D%22redirect%22%0D%0A%0D%0A%3B%3B+SECTION%3A+Diagnostic+Data%0D%0A%22DiagnosticData%22%3Ddword%3A00000000%0D%0A%22UrlDiagnosticDataEnabled%22%3Ddword%3A00000000%0D%0A%0D%0A%3B%3B+SECTION%3A+Downloads%0D%0A%22PromptForDownloadLocation%22%3Ddword%3A00000001%0D%0A%0D%0A%3B%3B+SECTION%3A+Edge+Website+Typo+Protection+settings%0D%0A%22TyposquattingCheckerEnabled%22%3Ddword%3A00000000%0D%0A%0D%0A%3B%3B+SECTION%3A+Edge+Workspaces+settings%0D%0A%22EdgeWorkspacesEnabled%22%3Ddword%3A00000000%0D%0A%0D%0A%3B%3B+SECTION%3A+Extensions%0D%0A%22EdgeSafeHostingExtensionEnabled%22%3Ddword%3A00000000%0D%0A%0D%0A%3B%3B+SECTION%3A+Generative+AI%0D%0A%22AIGenThemesEnabled%22%3Ddword%3A00000000%0D%0A%3B%22GenAILocalFoundationalModelSettings%22%3Ddword%3A00000001%0D%0A%0D%0A%3B%3B+SECTION%3A+Identity+and+sign-in%0D%0A%22EdgeDefaultProfileEnabled%22%3D%22Default%22%0D%0A%22GuidedSwitchEnabled%22%3Ddword%3A00000000%0D%0A%22ImplicitSignInEnabled%22%3Ddword%3A00000000%0D%0A%22M365AuthPopupsInWorkEnabled%22%3Ddword%3A00000000%0D%0A%22NonMicrosoftAccountSignInEnabled%22%3Ddword%3A00000000%0D%0A%22ProactiveAuthWorkflowEnabled%22%3Ddword%3A00000000%0D%0A%22SeamlessWebToBrowserSignInEnabled%22%3Ddword%3A00000000%0D%0A%22WebToBrowserSignInEnabled%22%3Ddword%3A00000000%0D%0A%0D%0A%3B%3B+SECTION%3A+Import%0D%0A%22ImportAutofillFormData%22%3Ddword%3A00000000%0D%0A%22ImportBrowserSettings%22%3Ddword%3A00000000%0D%0A%22ImportCookies%22%3Ddword%3A00000000%0D%0A%22ImportExtensions%22%3Ddword%3A00000000%0D%0A%22ImportFavorites%22%3Ddword%3A00000000%0D%0A%22ImportHistory%22%3Ddword%3A00000000%0D%0A%22ImportHomepage%22%3Ddword%3A00000000%0D%0A%22ImportOnEachLaunch%22%3Ddword%3A00000000%0D%0A%22ImportOpenTabs%22%3Ddword%3A00000000%0D%0A%22ImportPaymentInfo%22%3Ddword%3A00000000%0D%0A%22ImportSavedPasswords%22%3Ddword%3A00000000%0D%0A%22ImportSearchEngine%22%3Ddword%3A00000000%0D%0A%22ImportShortcuts%22%3Ddword%3A00000000%0D%0A%22ImportStartupPageSettings%22%3Ddword%3A00000000%0D%0A%0D%0A%3B%3B+SECTION%3A+Manageability%0D%0A%22EdgeManagementEnabled%22%3Ddword%3A00000000%0D%0A%22EdgeManagementExtensionsFeedbackEnabled%22%3Ddword%3A00000000%0D%0A%22MAMEnabled%22%3Ddword%3A00000000%0D%0A%0D%0A%3B%3B+SECTION%3A+Microsoft+Office%0D%0A%22QuickViewOfficeFilesEnabled%22%3Ddword%3A00000000%0D%0A%0D%0A%3B%3B+SECTION%3A+Network+settings%0D%0A%3B+You+need+to+override+this+here+to+change+DoH+on+managed+Edge%0D%0A%22DnsOverHttpsMode%22%3D%22secure%22%0D%0A%22DnsOverHttpsTemplates%22%3D%22https%3A%2F%2Ffreedns.controld.com%2Fp0%22%0D%0A%22NetworkPredictionOptions%22%3Ddword%3A00000002%0D%0A%0D%0A%3B%3B+SECTION%3A+Password+manager+and+protection%0D%0A%22PasswordGeneratorEnabled%22%3Ddword%3A00000000%0D%0A%22PasswordManagerEnabled%22%3Ddword%3A00000000%0D%0A%22PasswordManagerPasskeysEnabled%22%3Ddword%3A00000000%0D%0A%22PasswordMonitorAllowed%22%3Ddword%3A00000000%0D%0A%22PasswordProtectionWarningTrigger%22%3Ddword%3A00000000%0D%0A%22PasswordRevealEnabled%22%3Ddword%3A00000000%0D%0A%0D%0A%3B%3B+SECTION%3A+Performance%0D%0A%22ExtensionsPerformanceDetectorEnabled%22%3Ddword%3A00000000%0D%0A%22PerformanceDetectorEnabled%22%3Ddword%3A00000000%0D%0A%22PinBrowserEssentialsToolbarButton%22%3Ddword%3A00000000%0D%0A%22RAMResourceControlsEnabled%22%3Ddword%3A00000000%0D%0A%22StartupBoostEnabled%22%3Ddword%3A00000000%0D%0A%0D%0A%3B%3B+SECTION%3A+Personalization%0D%0A%22PersonalizationReportingEnabled%22%3Ddword%3A00000000%0D%0A%22PersonalizeTopSitesInCustomizeSidebarEnabled%22%3Ddword%3A00000000%0D%0A%0D%0A%3B%3B+SECTION%3A+Scareware+Blocker+settings%0D%0A%22ScarewareBlockerBlocksDetectedSitesEnabled%22%3Ddword%3A00000000%0D%0A%22ScarewareBlockerProtectionEnabled%22%3Ddword%3A00000000%0D%0A%22ScarewareBlockerSendDetectedSitesToSmartScreenEnabled%22%3Ddword%3A00000000%0D%0A%0D%0A%3B%3B+SECTION%3A+Startup%2C+home+page+and+new+tab+page%0D%0A%3B+Completely+breaks+the+NTP+search+bar%0D%0A%3B%22NewTabPageAllowedBackgroundTypes%22%3Ddword%3A00000001%0D%0A%22NewTabPageAppLauncherEnabled%22%3Ddword%3A00000000%0D%0A%22NewTabPageBingChatEnabled%22%3Ddword%3A00000000%0D%0A%22NewTabPageContentEnabled%22%3Ddword%3A00000000%0D%0A%22NewTabPageHideDefaultTopSites%22%3Ddword%3A00000001%0D%0A%22NewTabPagePrerenderEnabled%22%3Ddword%3A00000000%0D%0A%22NewTabPageQuickLinksEnabled%22%3Ddword%3A00000000%0D%0A%22ShowHomeButton%22%3Ddword%3A00000000%0D%0A%0D%0A%3B%3B+SECTION%3A+Additional%0D%0A%22AADWebSiteSSOUsingThisProfileEnabled%22%3Ddword%3A00000000%0D%0A%22AddressBarClipboardSuggestEnabled%22%3Ddword%3A00000000%0D%0A%22AdsTransparencyEnabled%22%3Ddword%3A00000000%0D%0A%22AllowBrowsingWithCopilot%22%3Ddword%3A00000000%0D%0A%22AlternateErrorPagesEnabled%22%3Ddword%3A00000000%0D%0A%22AutoImportAtFirstRun%22%3Ddword%3A00000004%0D%0A%22AutofillAddressEnabled%22%3Ddword%3A00000000%0D%0A%22AutofillCreditCardEnabled%22%3Ddword%3A00000000%0D%0A%22AutofillMembershipsEnabled%22%3Ddword%3A00000000%0D%0A%22AutofillSettings%22%3D%22%5B%7B%5C%22blocked_types%5C%22%3A+%5B%5C%22all%5C%22%5D%2C+%5C%22url_pattern%5C%22%3A+%5C%22*%5C%22%7D%5D%22%0D%0A%0D%0A%22BackgroundModeEnabled%22%3Ddword%3A00000000%0D%0A%22BingAdsSuppression%22%3Ddword%3A00000001%0D%0A%22BrowserSignin%22%3Ddword%3A00000000%0D%0A%3B%22BrowsingDataLifetime%22%0D%0A%3B%22BuiltInAIAPIsEnabled%22%3Ddword%3A00000000%0D%0A%0D%0A%22ComposeInlineEnabled%22%3Ddword%3A00000000%0D%0A%22ConfigureOnPremisesAccountAutoSignIn%22%3Ddword%3A00000000%0D%0A%22ConfigureOnlineTextToSpeech%22%3Ddword%3A00000000%0D%0A%22ConfigureShare%22%3Ddword%3A00000001%0D%0A%22CopilotAddressBarSuggestionsEnabled%22%3Ddword%3A00000000%0D%0A%22CopilotCoworkToolActionsEnabled%22%3Ddword%3A00000000%0D%0A%22CopilotNewTabPageEnabled%22%3Ddword%3A00000000%0D%0A%0D%0A%22DefaultBrowserSettingEnabled%22%3Ddword%3A00000000%0D%0A%22DefaultBrowserSettingsCampaignEnabled%22%3Ddword%3A00000000%0D%0A%22DefaultShareAdditionalOSRegionSetting%22%3Ddword%3A00000002%0D%0A%0D%0A%22Edge3PSerpTelemetryEnabled%22%3Ddword%3A00000000%0D%0A%22EdgeAssetDeliveryServiceEnabled%22%3Ddword%3A00000000%0D%0A%22EdgeAutofillMlEnabled%22%3Ddword%3A00000000%0D%0A%22EdgeEDropEnabled%22%3Ddword%3A00000000%0D%0A%22EdgeHistoryAISearchEnabled%22%3Ddword%3A00000000%0D%0A%22EdgeShoppingAssistantEnabled%22%3Ddword%3A00000000%0D%0A%22EdgeWalletCheckoutEnabled%22%3Ddword%3A00000000%0D%0A%22ExperimentationAndConfigurationServiceControl%22%3Ddword%3A00000000%0D%0A%0D%0A%22FamilySafetySettingsEnabled%22%3Ddword%3A00000000%0D%0A%0D%0A%22HideFirstRunExperience%22%3Ddword%3A00000001%0D%0A%22HideInternetExplorerRedirectUXForIncompatibleSitesEnabled%22%3Ddword%3A00000001%0D%0A%22HubsSidebarEnabled%22%3Ddword%3A00000000%0D%0A%0D%0A%22InAppSupportEnabled%22%3Ddword%3A00000000%0D%0A%0D%0A%22LaunchEdgeOnWindowsStartupEnabled%22%3Ddword%3A00000000%0D%0A%22LiveVideoTranslationEnabled%22%3Ddword%3A00000000%0D%0A%22LocalBrowserDataShareEnabled%22%3Ddword%3A00000000%0D%0A%0D%0A%22M365LinksAutoOpenCopilotEnabled%22%3Ddword%3A00000000%0D%0A%22MSAWebSiteSSOUsingThisProfileAllowed%22%3Ddword%3A00000000%0D%0A%22MicrosoftEdgeInsiderPromotionEnabled%22%3Ddword%3A00000000%0D%0A%22MicrosoftEditorProofingEnabled%22%3Ddword%3A00000000%0D%0A%22MicrosoftEditorSynonymsEnabled%22%3Ddword%3A00000000%0D%0A%22MouseGestureEnabled%22%3Ddword%3A00000000%0D%0A%0D%0A%22NonRemovableProfileEnabled%22%3Ddword%3A00000000%0D%0A%0D%0A%22PaymentMethodQueryEnabled%22%3Ddword%3A00000000%0D%0A%22PinningWizardAllowed%22%3Ddword%3A00000000%0D%0A%0D%0A%22QRCodeGeneratorEnabled%22%3Ddword%3A00000000%0D%0A%22QuickSearchShowMiniMenu%22%3Ddword%3A00000000%0D%0A%0D%0A%22ReadAloudEnabled%22%3Ddword%3A00000000%0D%0A%22ResolveNavigationErrorsUseWebService%22%3Ddword%3A00000000%0D%0A%0D%0A%22SavingBrowserHistoryDisabled%22%3Ddword%3A00000001%0D%0A%3B%22SearchForImageEnabled%22%3Ddword%3A00000000%0D%0A%22SearchInSidebarEnabled%22%3Ddword%3A00000002%0D%0A%22SearchSuggestEnabled%22%3Ddword%3A00000000%0D%0A%22SearchbarAllowed%22%3Ddword%3A00000000%0D%0A%22SearchbarIsEnabledOnStartup%22%3Ddword%3A00000000%0D%0A%22ShareBrowsingHistoryWithCopilotSearchAllowed%22%3Ddword%3A00000000%0D%0A%22SharedLinksEnabled%22%3Ddword%3A00000000%0D%0A%22ShowMicrosoftRewards%22%3Ddword%3A00000000%0D%0A%22ShowRecommendationsEnabled%22%3Ddword%3A00000000%0D%0A%22SpeechRecognitionEnabled%22%3Ddword%3A00000000%0D%0A%22StandaloneHubsSidebarEnabled%22%3Ddword%3A00000000%0D%0A%22SyncDisabled%22%3Ddword%3A00000001%0D%0A%0D%0A%22TabServicesEnabled%22%3Ddword%3A00000000%0D%0A%22TextPredictionEnabled%22%3Ddword%3A00000000%0D%0A%0D%0A%22UploadFromPhoneEnabled%22%3Ddword%3A00000000%0D%0A%22UserFeedbackAllowed%22%3Ddword%3A00000000%0D%0A%0D%0A%22VisualSearchEnabled%22%3Ddword%3A00000000%0D%0A%0D%0A%22WhatsNewPageForEntraProfilesEnabled%22%3Ddword%3A00000000%0D%0A%0D%0A%5BHKEY_LOCAL_MACHINE%5CSOFTWARE%5CPolicies%5CMicrosoft%5CEdge%5CRecommended%5D%0D%0A%3B%3B+SECTION%3A+Default+search+provider%0D%0A%3B%22DefaultSearchProviderEnabled%22%3Ddword%3A00000001%0D%0A%3B%22DefaultSearchProviderKeyword%22%3D%22%21d%22%0D%0A%3B%22DefaultSearchProviderName%22%3D%22DuckDuckGo%22%0D%0A%3B%22DefaultSearchProviderSearchURL%22%3D%22https%3A%2F%2Fnoai.duckduckgo.com%2Fsearch%3Fq%3D%7BsearchTerms%7D%22%0D%0A%0D%0A%3B%3B+SECTION%3A+Performance%0D%0A%3B%22EfficiencyMode%22%3Ddword%3A0000003%0D%0A%0D%0A%3B%3B+SECTION%3A+Printing%0D%0A%22PrintHeaderFooter%22%3Ddword%3A00000000%0D%0A%0D%0A%3B%3B+SECTION%3A+Sleeping+tabs+settings%0D%0A%22SleepingTabsEnabled%22%3Ddword%3A00000000%0D%0A%0D%0A%3B+Edge+WebView2%0D%0A%5BHKEY_LOCAL_MACHINE%5CSOFTWARE%5CPolicies%5CMicrosoft%5CEdge%5CWebView2%5D%0D%0A%22ExperimentationAndConfigurationServiceControl%22%3Ddword%3A00000000%0D%0A%0D%0A%3B+Edge+Update%0D%0A%5BHKEY_LOCAL_MACHINE%5CSOFTWARE%5CPolicies%5CMicrosoft%5CEdgeUpdate%5D%0D%0A%22UpdaterExperimentationAndConfigurationServiceControl%22%3Ddword%3A00000000%0D%0A%22Install%7BC50565E9-CCCF-44B4-BA15-5AC5C6569197%7D%22%3Ddword%3A00000000%0D%0A&SystemScriptType3=Reg&DefaultUserScript0=Windows+Registry+Editor+Version+5.00%0D%0A%0D%0A%5BHKEY_USERS%5CDefaultUser%5CControl+Panel%5CAccessibility%5CKeyboard+Response%5D%0D%0A%3B+disable+Filter+Keys+shortcut%0D%0A%22Flags%22%3D%22122%22%0D%0A&DefaultUserScriptType0=Reg&UserOnceScript0=Windows+Registry+Editor+Version+5.00%0D%0A%0D%0A%5BHKEY_CURRENT_USER%5CControl+Panel%5CInternational%5CUser+Profile%5D%0D%0A%3B+disable+%22Let+websites+show+me+locally+relevant+content+by+accessing+my+language+list%22%0D%0A%22HttpAcceptLanguageOptOut%22%3Ddword%3A00000001%0D%0A%0D%0A%5BHKEY_CURRENT_USER%5CSOFTWARE%5CClasses%5CLocal+Settings%5CSoftware%5CMicrosoft%5CWindows%5CShell%5CBags%5CAllFolders%5CShell%5D%0D%0A%3B+disable+Explorer+media+discovery%0D%0A%22FolderType%22%3D%22NotSpecified%22%0D%0A%0D%0A%5BHKEY_CURRENT_USER%5CSoftware%5CMicrosoft%5CClipboard%5D%0D%0A%3B+enable+Win%2BV+history%0D%0A%22EnableClipboardHistory%22%3Ddword%3A00000001%0D%0A%0D%0A%5BHKEY_CURRENT_USER%5CSoftware%5CMicrosoft%5CWindows%5CCurrentVersion%5CCrossDeviceResume%5CConfiguration%5D%0D%0A%3B+disable+CrossDeviceResume%0D%0A%22IsResumeAllowed%22%3Ddword%3A00000000%0D%0A%0D%0A%5BHKEY_CURRENT_USER%5CSoftware%5CMicrosoft%5CWindows%5CCurrentVersion%5CCDP%5D%0D%0A%3B+disable+%22Share+across+devices%22%0D%0A%22CdpSessionUserAuthzPolicy%22%3Ddword%3A00000000%0D%0A%0D%0A%5BHKEY_CURRENT_USER%5CSoftware%5CMicrosoft%5CWindows%5CCurrentVersion%5CExplorer%5D%0D%0A%3B+disable+%22Show+files+from+Office.com%22%0D%0A%22ShowCloudFilesInQuickAccess%22%3Ddword%3A00000000%0D%0A%3B+disable+%22Show+frequently+used+folders%22%0D%0A%22ShowFrequent%22%3Ddword%3A00000000%0D%0A%3B+disable+%22Show+recently+used+files%22%0D%0A%22ShowRecent%22%3Ddword%3A00000000%0D%0A%0D%0A%5BHKEY_CURRENT_USER%5CSoftware%5CMicrosoft%5CWindows%5CCurrentVersion%5CExplorer%5CAdvanced%5D%0D%0A%3B+enable+%22Use+check+boxes+to+select+items%22%0D%0A%22AutoCheckSelect%22%3Ddword%3A00000001%0D%0A%3B+disable+%22Show+snap+layouts+when+I+hover+over+a+window%27s+maximize+button%22%0D%0A%22EnableSnapAssistFlyout%22%3Ddword%3A00000000%0D%0A%3B+disable+%22Show+snap+layouts+when+I+drag+a+window+to+the+top+of+my+screen%22%0D%0A%22EnableSnapBar%22%3Ddword%3A00000000%0D%0A%3B+enable+%22Show+seconds+in+system+tray+clock%22%0D%0A%22ShowSecondsInSystemClock%22%3Ddword%3A00000001%0D%0A%3B+disable+%22Show+account-related+notifications%22%0D%0A%22Start_AccountNotifications%22%3Ddword%3A00000000%0D%0A%3B+disable+%22Show+recommendations+for+tips%2C+shortcuts%2C+new+apps%2C+and+more%22%0D%0A%22Start_IrisRecommendations%22%3Ddword%3A00000000%0D%0A%3B+disable+%22Show+websites+from+your+browsing+history%22%0D%0A%22Start_RecoPersonalizedSites%22%3Ddword%3A00000000%0D%0A%3B+disable+%22Show+recommended+files+in+Start%2C+recent+files+in+File+Explorer%2C+and+items+in+Jump+Lists%22%0D%0A%22Start_TrackDocs%22%3Ddword%3A00000000%0D%0A%3B+disable+%22Improve+Start+and+search+results%22+%2F+%22Let+Windows+improve+Start+and+search+results+by+tracking+which+apps+I+open%22%0D%0A%22Start_TrackProgs%22%3Ddword%3A00000000%0D%0A%3B+disable+%22Share+any+window+from+my+taskbar%22%0D%0A%22TaskbarSn%22%3Ddword%3A00000000%0D%0A%3B+enable+%22Decrease+space+between+items+%28compact+view%29%22%0D%0A%22UseCompactMode%22%3Ddword%3A00000001%0D%0A%3B+set+small+taskbar+icons%0D%0A%22TaskbarSize%22%3Ddword%3A00000001%0D%0A%0D%0A%5BHKEY_CURRENT_USER%5CSoftware%5CMicrosoft%5CWindows%5CCurrentVersion%5CExplorer%5CAutoplayHandlers%5D%0D%0A%3B+disable+AutoPlay+%28settings%2Fcontrol+panel+UI%29%0D%0A%22DisableAutoplay%22%3Ddword%3A00000001%0D%0A%0D%0A%5BHKEY_CURRENT_USER%5CSoftware%5CMicrosoft%5CWindows%5CCurrentVersion%5CNotifications%5CSettings%5CWindows.ActionCenter.SmartOptOut%5D%0D%0A%3B+disable+Notification+Suggestions+%28i.e.+%22Turn+off+notifications+from+%3Capp%3E%3F%22%29%0D%0A%22Enabled%22%3Ddword%3A00000000%0D%0A%0D%0A%5BHKEY_CURRENT_USER%5CSoftware%5CMicrosoft%5CWindows%5CCurrentVersion%5CNotifications%5CSettings%5CWindows.SystemToast.Suggested%5D%0D%0A%3B+disable+Suggested+notification+ads%0D%0A%22Enabled%22%3Ddword%3A00000000%0D%0A%0D%0A%5BHKEY_CURRENT_USER%5CSoftware%5CMicrosoft%5CWindows%5CCurrentVersion%5CSearchSettings%5D%0D%0A%3B+disable+%22Search+my+accounts%3A+Work+or+School+account%22%0D%0A%22IsAADCloudSearchEnabled%22%3Ddword%3A00000000%0D%0A%3B+disable+%22Search+history%22%0D%0A%22IsDeviceSearchHistoryEnabled%22%3Ddword%3A00000000%0D%0A%3B+disable+%22Search+my+accounts%3A+Microsoft+account%22%0D%0A%22IsMSACloudSearchEnabled%22%3Ddword%3A00000000%0D%0A%0D%0A%5BHKEY_CURRENT_USER%5CSoftware%5CMicrosoft%5CWindows%5CCurrentVersion%5CStart%5D%0D%0A%3B+disable+recent+files+list%0D%0A%22ShowRecentList%22%3Ddword%3A00000000%0D%0A%3B+set+Start+Menu+size+to+Small%0D%0A%22StartMenuSize%22%3Ddword%3A00000001%0D%0A%0D%0A%5BHKEY_CURRENT_USER%5CSoftware%5CMicrosoft%5CWindows%5CCurrentVersion%5CSystemSettings%5CAccountNotifications%5D%0D%0A%3B+disable+%22Show+me+notifications+in+the+Settings+app%22%0D%0A%22EnableAccountNotifications%22%3Ddword%3A00000000%0D%0A%0D%0A%5BHKEY_CURRENT_USER%5CSoftware%5CMicrosoft%5CWindows%5CCurrentVersion%5CUserProfileEngagement%5D%0D%0A%3B+disable+second-chance+OOBE+%28scoobe%29+aka+%22Let%27s+finish+setting+up+your+device%22+prompt%0D%0A%22ScoobeSystemSettingEnabled%22%3Ddword%3A00000000%0D%0A&UserOnceScriptType0=Reg&RestartExplorer=true&AppLockerMode=Skip&ComponentContent0=%3CComputerName%3ETEMPNAME%3C%2FComputerName%3E%0D%0A%3CRegisteredOrganization%3ESunrise+Foundation%3C%2FRegisteredOrganization%3E%0D%0A%3CRegisteredOwner%3EHarry%3C%2FRegisteredOwner%3E&Component0=Microsoft-Windows-Shell-Setup-specialize-->
 	<settings pass="offlineServicing"></settings>
 	<settings pass="windowsPE">
 		<component name="Microsoft-Windows-International-Core-WinPE" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS">
@@ -98,8 +98,8 @@
 	<Extensions xmlns="https://schneegans.de/windows/unattend-generator/">
 		<Build>
 			<Commit>
-				<Hash>bf1399141716a23e95ff2aa36a3e9ced61279ac7</Hash>
-				<GitHubUrl>https://github.com/cschneegans/unattend-generator/commit/bf1399141716a23e95ff2aa36a3e9ced61279ac7</GitHubUrl>
+				<Hash>1e0d672595ef7933fceed57a89569cfc683848b9</Hash>
+				<GitHubUrl>https://github.com/cschneegans/unattend-generator/commit/1e0d672595ef7933fceed57a89569cfc683848b9</GitHubUrl>
 			</Commit>
 		</Build>
 		<ExtractScript>
@@ -154,7 +154,7 @@ Set-StrictMode -Version 'Latest';
 	}
 } *&gt;&amp;1 | Out-String -Width 1KB -Stream &gt;&gt; 'C:\Windows\Setup\Scripts\SetComputerName.log';
 		</File>
-		<File path="C:\Windows\Setup\Scripts\RemovePackages.ps1">
+		<File path="C:\Windows\Setup\Scripts\RemovePackage.ps1">
 $selectors = @(
 	'Microsoft.BingSearch';
 	'Clipchamp.Clipchamp';
@@ -173,6 +173,7 @@ $selectors = @(
 	'Microsoft.MicrosoftOfficeHub';
 	'Microsoft.Office.OneNote';
 	'Microsoft.OutlookForWindows';
+	'Microsoft.Paint';
 	'Microsoft.MSPaint';
 	'Microsoft.People';
 	'Microsoft.Windows.Photos';
@@ -185,6 +186,7 @@ $selectors = @(
 	'MSTeams';
 	'Microsoft.Todos';
 	'Microsoft.WindowsSoundRecorder';
+	'Microsoft.Wallet';
 	'Microsoft.BingWeather';
 	'Microsoft.YourPhone';
 	'Microsoft.ZuneMusic';
@@ -207,33 +209,30 @@ $removeCommand = {
   }
 };
 $type = 'Package';
-$logfile = 'C:\Windows\Setup\Scripts\RemovePackages.log';
-&amp; {
-	$installed = &amp; $getCommand;
-	foreach( $selector in $selectors ) {
-		$result = [ordered] @{
-			Selector = $selector;
-		};
-		$found = $installed | Where-Object -FilterScript $filterCommand;
-		if( $found ) {
-			$result.Output = $found | &amp; $removeCommand;
-			if( $? ) {
-				$result.Message = "$type removed.";
-			} else {
-				$result.Message = "$type not removed.";
-				$result.Error = $Error[0];
-			}
+$installed = &amp; $getCommand;
+foreach( $selector in $selectors ) {
+	$result = [ordered] @{
+		Selector = $selector;
+	};
+	if( $found = $installed | Where-Object -FilterScript $filterCommand ) {
+		$result.Output = $found | &amp; $removeCommand;
+		if( $? ) {
+			$result.Message = "${type} removed.";
 		} else {
-			$result.Message = "$type not installed.";
+			$result.Message = "${type} not removed.";
+			$result.Error = $Error[0];
 		}
-		$result | ConvertTo-Json -Depth 3 -Compress;
+	} else {
+		$result.Message = "${type} not installed.";
 	}
-} *&gt;&amp;1 | Out-String -Width 1KB -Stream &gt;&gt; $logfile;
+	$result | ConvertTo-Json -Depth 3 -Compress;
+}
 		</File>
-		<File path="C:\Windows\Setup\Scripts\RemoveCapabilities.ps1">
+		<File path="C:\Windows\Setup\Scripts\RemoveCapability.ps1">
 $selectors = @(
+	'Microsoft.Windows.MSPaint';
 	'App.Support.QuickAssist';
-	'Media.WindowsMediaPlayer';
+	'App.StepsRecorder';
 );
 $getCommand = {
   Get-WindowsCapability -Online | Where-Object -Property 'State' -NotIn -Value @(
@@ -255,30 +254,26 @@ $removeCommand = {
   }
 };
 $type = 'Capability';
-$logfile = 'C:\Windows\Setup\Scripts\RemoveCapabilities.log';
-&amp; {
-	$installed = &amp; $getCommand;
-	foreach( $selector in $selectors ) {
-		$result = [ordered] @{
-			Selector = $selector;
-		};
-		$found = $installed | Where-Object -FilterScript $filterCommand;
-		if( $found ) {
-			$result.Output = $found | &amp; $removeCommand;
-			if( $? ) {
-				$result.Message = "$type removed.";
-			} else {
-				$result.Message = "$type not removed.";
-				$result.Error = $Error[0];
-			}
+$installed = &amp; $getCommand;
+foreach( $selector in $selectors ) {
+	$result = [ordered] @{
+		Selector = $selector;
+	};
+	if( $found = $installed | Where-Object -FilterScript $filterCommand ) {
+		$result.Output = $found | &amp; $removeCommand;
+		if( $? ) {
+			$result.Message = "${type} removed.";
 		} else {
-			$result.Message = "$type not installed.";
+			$result.Message = "${type} not removed.";
+			$result.Error = $Error[0];
 		}
-		$result | ConvertTo-Json -Depth 3 -Compress;
+	} else {
+		$result.Message = "${type} not installed.";
 	}
-} *&gt;&amp;1 | Out-String -Width 1KB -Stream &gt;&gt; $logfile;
+	$result | ConvertTo-Json -Depth 3 -Compress;
+}
 		</File>
-		<File path="C:\Windows\Setup\Scripts\RemoveFeatures.ps1">
+		<File path="C:\Windows\Setup\Scripts\RemoveFeature.ps1">
 $selectors = @(
 	'Recall';
 );
@@ -302,28 +297,24 @@ $removeCommand = {
   }
 };
 $type = 'Feature';
-$logfile = 'C:\Windows\Setup\Scripts\RemoveFeatures.log';
-&amp; {
-	$installed = &amp; $getCommand;
-	foreach( $selector in $selectors ) {
-		$result = [ordered] @{
-			Selector = $selector;
-		};
-		$found = $installed | Where-Object -FilterScript $filterCommand;
-		if( $found ) {
-			$result.Output = $found | &amp; $removeCommand;
-			if( $? ) {
-				$result.Message = "$type removed.";
-			} else {
-				$result.Message = "$type not removed.";
-				$result.Error = $Error[0];
-			}
+$installed = &amp; $getCommand;
+foreach( $selector in $selectors ) {
+	$result = [ordered] @{
+		Selector = $selector;
+	};
+	if( $found = $installed | Where-Object -FilterScript $filterCommand ) {
+		$result.Output = $found | &amp; $removeCommand;
+		if( $? ) {
+			$result.Message = "${type} removed.";
 		} else {
-			$result.Message = "$type not installed.";
+			$result.Message = "${type} not removed.";
+			$result.Error = $Error[0];
 		}
-		$result | ConvertTo-Json -Depth 3 -Compress;
+	} else {
+		$result.Message = "${type} not installed.";
 	}
-} *&gt;&amp;1 | Out-String -Width 1KB -Stream &gt;&gt; $logfile;
+	$result | ConvertTo-Json -Depth 3 -Compress;
+}
 		</File>
 		<File path="C:\Windows\Setup\Scripts\TaskbarLayoutModification.xml">
 &lt;LayoutModificationTemplate xmlns="http://schemas.microsoft.com/Start/2014/LayoutModification" xmlns:defaultlayout="http://schemas.microsoft.com/Start/2014/FullDefaultLayout" xmlns:start="http://schemas.microsoft.com/Start/2014/StartLayout" xmlns:taskbar="http://schemas.microsoft.com/Start/2014/TaskbarLayout" Version="1"&gt;
@@ -466,6 +457,10 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\TimeZoneInformation]
 ; treat BIOS time as UTC
 "RealTimeIsUniversal"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\WindowsNotepad]
+; disable Copilot in Notepad
+"DisableAIFeatures"=dword:00000001
 		</File>
 		<File path="C:\Windows\Setup\Scripts\unattend-02.ps1">
 # List of target Appx package DisplayNames
@@ -494,12 +489,254 @@ foreach ($app in $appsToRemove) {
 }
 
 Write-Host "Deprovisioning complete." -ForegroundColor Green
+
+# Block GIFs
+New-NetFirewallRule -DisplayName "[Disable GIPHY] TextInputHost.exe" -Direction Outbound -Program "C:\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\TextInputHost.exe" -Action Block -Profile Any
 		</File>
 		<File path="C:\Windows\Setup\Scripts\unattend-03.cmd">
 C:\Windows\Setup\Scripts\LGPO.exe /m C:\Windows\Setup\Scripts\registry_machine.pol
 C:\Windows\Setup\Scripts\LGPO.exe /u C:\Windows\Setup\Scripts\registry_user.pol
 		</File>
 		<File path="C:\Windows\Setup\Scripts\unattend-04.reg">
+Windows Registry Editor Version 5.00
+
+; Microsoft Edge user.js
+; Based on Edge v157
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Edge]
+;; SECTION: Accessibility
+"AccessibilityImageLabelsEnabled"=dword:00000000
+
+;; SECTION: Address Bar
+"AddressBarTrendingSuggestEnabled"=dword:00000000
+"AddressBarWorkSearchResultsEnabled"=dword:00000000
+
+;; SECTION: Content settings
+"ShowPDFDefaultRecommendationsEnabled"=dword:00000000
+"SpotlightExperiencesAndRecommendationsEnabled"=dword:00000000
+
+;; SECTION: Copilot
+"CopilotPageContext"=dword:00000000
+"EdgeEntraCopilotPageContext"=dword:00000000
+"Microsoft365CopilotChatIconEnabled"=dword:00000000
+
+;; SECTION: Default search provider
+"NewTabPageSearchBox"="redirect"
+
+;; SECTION: Diagnostic Data
+"DiagnosticData"=dword:00000000
+"UrlDiagnosticDataEnabled"=dword:00000000
+
+;; SECTION: Downloads
+"PromptForDownloadLocation"=dword:00000001
+
+;; SECTION: Edge Website Typo Protection settings
+"TyposquattingCheckerEnabled"=dword:00000000
+
+;; SECTION: Edge Workspaces settings
+"EdgeWorkspacesEnabled"=dword:00000000
+
+;; SECTION: Extensions
+"EdgeSafeHostingExtensionEnabled"=dword:00000000
+
+;; SECTION: Generative AI
+"AIGenThemesEnabled"=dword:00000000
+;"GenAILocalFoundationalModelSettings"=dword:00000001
+
+;; SECTION: Identity and sign-in
+"EdgeDefaultProfileEnabled"="Default"
+"GuidedSwitchEnabled"=dword:00000000
+"ImplicitSignInEnabled"=dword:00000000
+"M365AuthPopupsInWorkEnabled"=dword:00000000
+"NonMicrosoftAccountSignInEnabled"=dword:00000000
+"ProactiveAuthWorkflowEnabled"=dword:00000000
+"SeamlessWebToBrowserSignInEnabled"=dword:00000000
+"WebToBrowserSignInEnabled"=dword:00000000
+
+;; SECTION: Import
+"ImportAutofillFormData"=dword:00000000
+"ImportBrowserSettings"=dword:00000000
+"ImportCookies"=dword:00000000
+"ImportExtensions"=dword:00000000
+"ImportFavorites"=dword:00000000
+"ImportHistory"=dword:00000000
+"ImportHomepage"=dword:00000000
+"ImportOnEachLaunch"=dword:00000000
+"ImportOpenTabs"=dword:00000000
+"ImportPaymentInfo"=dword:00000000
+"ImportSavedPasswords"=dword:00000000
+"ImportSearchEngine"=dword:00000000
+"ImportShortcuts"=dword:00000000
+"ImportStartupPageSettings"=dword:00000000
+
+;; SECTION: Manageability
+"EdgeManagementEnabled"=dword:00000000
+"EdgeManagementExtensionsFeedbackEnabled"=dword:00000000
+"MAMEnabled"=dword:00000000
+
+;; SECTION: Microsoft Office
+"QuickViewOfficeFilesEnabled"=dword:00000000
+
+;; SECTION: Network settings
+; You need to override this here to change DoH on managed Edge
+"DnsOverHttpsMode"="secure"
+"DnsOverHttpsTemplates"="https://freedns.controld.com/p0"
+"NetworkPredictionOptions"=dword:00000002
+
+;; SECTION: Password manager and protection
+"PasswordGeneratorEnabled"=dword:00000000
+"PasswordManagerEnabled"=dword:00000000
+"PasswordManagerPasskeysEnabled"=dword:00000000
+"PasswordMonitorAllowed"=dword:00000000
+"PasswordProtectionWarningTrigger"=dword:00000000
+"PasswordRevealEnabled"=dword:00000000
+
+;; SECTION: Performance
+"ExtensionsPerformanceDetectorEnabled"=dword:00000000
+"PerformanceDetectorEnabled"=dword:00000000
+"PinBrowserEssentialsToolbarButton"=dword:00000000
+"RAMResourceControlsEnabled"=dword:00000000
+"StartupBoostEnabled"=dword:00000000
+
+;; SECTION: Personalization
+"PersonalizationReportingEnabled"=dword:00000000
+"PersonalizeTopSitesInCustomizeSidebarEnabled"=dword:00000000
+
+;; SECTION: Scareware Blocker settings
+"ScarewareBlockerBlocksDetectedSitesEnabled"=dword:00000000
+"ScarewareBlockerProtectionEnabled"=dword:00000000
+"ScarewareBlockerSendDetectedSitesToSmartScreenEnabled"=dword:00000000
+
+;; SECTION: Startup, home page and new tab page
+; Completely breaks the NTP search bar
+;"NewTabPageAllowedBackgroundTypes"=dword:00000001
+"NewTabPageAppLauncherEnabled"=dword:00000000
+"NewTabPageBingChatEnabled"=dword:00000000
+"NewTabPageContentEnabled"=dword:00000000
+"NewTabPageHideDefaultTopSites"=dword:00000001
+"NewTabPagePrerenderEnabled"=dword:00000000
+"NewTabPageQuickLinksEnabled"=dword:00000000
+"ShowHomeButton"=dword:00000000
+
+;; SECTION: Additional
+"AADWebSiteSSOUsingThisProfileEnabled"=dword:00000000
+"AddressBarClipboardSuggestEnabled"=dword:00000000
+"AdsTransparencyEnabled"=dword:00000000
+"AllowBrowsingWithCopilot"=dword:00000000
+"AlternateErrorPagesEnabled"=dword:00000000
+"AutoImportAtFirstRun"=dword:00000004
+"AutofillAddressEnabled"=dword:00000000
+"AutofillCreditCardEnabled"=dword:00000000
+"AutofillMembershipsEnabled"=dword:00000000
+"AutofillSettings"="[{\"blocked_types\": [\"all\"], \"url_pattern\": \"*\"}]"
+
+"BackgroundModeEnabled"=dword:00000000
+"BingAdsSuppression"=dword:00000001
+"BrowserSignin"=dword:00000000
+;"BrowsingDataLifetime"
+;"BuiltInAIAPIsEnabled"=dword:00000000
+
+"ComposeInlineEnabled"=dword:00000000
+"ConfigureOnPremisesAccountAutoSignIn"=dword:00000000
+"ConfigureOnlineTextToSpeech"=dword:00000000
+"ConfigureShare"=dword:00000001
+"CopilotAddressBarSuggestionsEnabled"=dword:00000000
+"CopilotCoworkToolActionsEnabled"=dword:00000000
+"CopilotNewTabPageEnabled"=dword:00000000
+
+"DefaultBrowserSettingEnabled"=dword:00000000
+"DefaultBrowserSettingsCampaignEnabled"=dword:00000000
+"DefaultShareAdditionalOSRegionSetting"=dword:00000002
+
+"Edge3PSerpTelemetryEnabled"=dword:00000000
+"EdgeAssetDeliveryServiceEnabled"=dword:00000000
+"EdgeAutofillMlEnabled"=dword:00000000
+"EdgeEDropEnabled"=dword:00000000
+"EdgeHistoryAISearchEnabled"=dword:00000000
+"EdgeShoppingAssistantEnabled"=dword:00000000
+"EdgeWalletCheckoutEnabled"=dword:00000000
+"ExperimentationAndConfigurationServiceControl"=dword:00000000
+
+"FamilySafetySettingsEnabled"=dword:00000000
+
+"HideFirstRunExperience"=dword:00000001
+"HideInternetExplorerRedirectUXForIncompatibleSitesEnabled"=dword:00000001
+"HubsSidebarEnabled"=dword:00000000
+
+"InAppSupportEnabled"=dword:00000000
+
+"LaunchEdgeOnWindowsStartupEnabled"=dword:00000000
+"LiveVideoTranslationEnabled"=dword:00000000
+"LocalBrowserDataShareEnabled"=dword:00000000
+
+"M365LinksAutoOpenCopilotEnabled"=dword:00000000
+"MSAWebSiteSSOUsingThisProfileAllowed"=dword:00000000
+"MicrosoftEdgeInsiderPromotionEnabled"=dword:00000000
+"MicrosoftEditorProofingEnabled"=dword:00000000
+"MicrosoftEditorSynonymsEnabled"=dword:00000000
+"MouseGestureEnabled"=dword:00000000
+
+"NonRemovableProfileEnabled"=dword:00000000
+
+"PaymentMethodQueryEnabled"=dword:00000000
+"PinningWizardAllowed"=dword:00000000
+
+"QRCodeGeneratorEnabled"=dword:00000000
+"QuickSearchShowMiniMenu"=dword:00000000
+
+"ReadAloudEnabled"=dword:00000000
+"ResolveNavigationErrorsUseWebService"=dword:00000000
+
+"SavingBrowserHistoryDisabled"=dword:00000001
+;"SearchForImageEnabled"=dword:00000000
+"SearchInSidebarEnabled"=dword:00000002
+"SearchSuggestEnabled"=dword:00000000
+"SearchbarAllowed"=dword:00000000
+"SearchbarIsEnabledOnStartup"=dword:00000000
+"ShareBrowsingHistoryWithCopilotSearchAllowed"=dword:00000000
+"SharedLinksEnabled"=dword:00000000
+"ShowMicrosoftRewards"=dword:00000000
+"ShowRecommendationsEnabled"=dword:00000000
+"SpeechRecognitionEnabled"=dword:00000000
+"StandaloneHubsSidebarEnabled"=dword:00000000
+"SyncDisabled"=dword:00000001
+
+"TabServicesEnabled"=dword:00000000
+"TextPredictionEnabled"=dword:00000000
+
+"UploadFromPhoneEnabled"=dword:00000000
+"UserFeedbackAllowed"=dword:00000000
+
+"VisualSearchEnabled"=dword:00000000
+
+"WhatsNewPageForEntraProfilesEnabled"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Edge\Recommended]
+;; SECTION: Default search provider
+;"DefaultSearchProviderEnabled"=dword:00000001
+;"DefaultSearchProviderKeyword"="!d"
+;"DefaultSearchProviderName"="DuckDuckGo"
+;"DefaultSearchProviderSearchURL"="https://noai.duckduckgo.com/search?q={searchTerms}"
+
+;; SECTION: Performance
+;"EfficiencyMode"=dword:0000003
+
+;; SECTION: Printing
+"PrintHeaderFooter"=dword:00000000
+
+;; SECTION: Sleeping tabs settings
+"SleepingTabsEnabled"=dword:00000000
+
+; Edge WebView2
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Edge\WebView2]
+"ExperimentationAndConfigurationServiceControl"=dword:00000000
+
+; Edge Update
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\EdgeUpdate]
+"UpdaterExperimentationAndConfigurationServiceControl"=dword:00000000
+"Install{C50565E9-CCCF-44B4-BA15-5AC5C6569197}"=dword:00000000
+		</File>
+		<File path="C:\Windows\Setup\Scripts\unattend-05.reg">
 Windows Registry Editor Version 5.00
 
 [HKEY_CURRENT_USER\Control Panel\International\User Profile]
@@ -553,6 +790,8 @@ Windows Registry Editor Version 5.00
 "TaskbarSn"=dword:00000000
 ; enable "Decrease space between items (compact view)"
 "UseCompactMode"=dword:00000001
+; set small taskbar icons
+"TaskbarSize"=dword:00000001
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\AutoplayHandlers]
 ; disable AutoPlay (settings/control panel UI)
@@ -577,6 +816,8 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Start]
 ; disable recent files list
 "ShowRecentList"=dword:00000000
+; set Start Menu size to Small
+"StartMenuSize"=dword:00000001
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\SystemSettings\AccountNotifications]
 ; disable "Show me notifications in the Settings app"
@@ -586,7 +827,7 @@ Windows Registry Editor Version 5.00
 ; disable second-chance OOBE (scoobe) aka "Let's finish setting up your device" prompt
 "ScoobeSystemSettingEnabled"=dword:00000000
 		</File>
-		<File path="C:\Windows\Setup\Scripts\unattend-05.reg">
+		<File path="C:\Windows\Setup\Scripts\unattend-06.reg">
 Windows Registry Editor Version 5.00
 
 [HKEY_USERS\DefaultUser\Control Panel\Accessibility\Keyboard Response]
@@ -596,7 +837,9 @@ Windows Registry Editor Version 5.00
 		<File path="C:\Windows\Setup\Scripts\Specialize.ps1">
 $scripts = @(
 	{
-		&amp; 'C:\Windows\Setup\Scripts\GetComputerName.ps1' &gt; 'C:\Windows\Setup\Scripts\ComputerName.txt';
+		[string] $newName = &amp; 'C:\Windows\Setup\Scripts\GetComputerName.ps1';
+		$newName &gt; 'C:\Windows\Setup\Scripts\ComputerName.txt';
+		"Will set the computer name to '${newName}'.";
 		Start-Process -FilePath ( Get-Process -Id $PID ).Path -ArgumentList '-ExecutionPolicy "Unrestricted" -NoProfile -File "C:\Windows\Setup\Scripts\SetComputerName.ps1"' -WindowStyle 'Hidden';
 		Start-Sleep -Seconds 10;
 	};
@@ -604,7 +847,11 @@ $scripts = @(
 		Remove-Item -LiteralPath 'Registry::HKLM\Software\Microsoft\WindowsUpdate\Orchestrator\UScheduler_Oobe\DevHomeUpdate' -Force -ErrorAction 'SilentlyContinue';
 	};
 	{
-		Remove-Item -LiteralPath 'C:\Users\Default\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\OneDrive.lnk', 'C:\Windows\System32\OneDriveSetup.exe', 'C:\Windows\SysWOW64\OneDriveSetup.exe' -ErrorAction 'Continue';
+		@(
+		  'C:\Users\Default\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\OneDrive.lnk';
+		  'C:\Windows\System32\OneDriveSetup.exe';
+		  'C:\Windows\SysWOW64\OneDriveSetup.exe';
+		) | Where-Object -FilterScript { [System.IO.File]::Exists( $_ ); } | Remove-Item -Verbose -ErrorAction 'Continue';
 	};
 	{
 		Remove-Item -LiteralPath 'Registry::HKLM\Software\Microsoft\WindowsUpdate\Orchestrator\UScheduler_Oobe\OutlookUpdate' -Force -ErrorAction 'SilentlyContinue';
@@ -613,13 +860,13 @@ $scripts = @(
 		reg.exe add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Communications" /v ConfigureChatAutoInstall /t REG_DWORD /d 0 /f;
 	};
 	{
-		&amp; 'C:\Windows\Setup\Scripts\RemovePackages.ps1';
+		&amp; 'C:\Windows\Setup\Scripts\RemovePackage.ps1';
 	};
 	{
-		&amp; 'C:\Windows\Setup\Scripts\RemoveCapabilities.ps1';
+		&amp; 'C:\Windows\Setup\Scripts\RemoveCapability.ps1';
 	};
 	{
-		&amp; 'C:\Windows\Setup\Scripts\RemoveFeatures.ps1';
+		&amp; 'C:\Windows\Setup\Scripts\RemoveFeature.ps1';
 	};
 	{
 		net.exe accounts /maxpwage:UNLIMITED;
@@ -633,6 +880,9 @@ $scripts = @(
 	};
 	{
 		reg.exe add "HKLM\SYSTEM\CurrentControlSet\Control\CI\Policy" /v VerifiedAndReputablePolicyState /t REG_DWORD /d 0 /f;
+	};
+	{
+		Remove-Item -LiteralPath 'C:\Users\Public\Desktop\Microsoft Edge.lnk' -ErrorAction 'SilentlyContinue' -Verbose;
 	};
 	{
 		reg.exe add "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Power" /v HiberbootEnabled /t REG_DWORD /d 0 /f;
@@ -665,6 +915,9 @@ $scripts = @(
 	{
 		C:\Windows\Setup\Scripts\unattend-03.cmd;
 	};
+	{
+		reg.exe import "C:\Windows\Setup\Scripts\unattend-04.reg";
+	};
 );
 
 &amp; {
@@ -690,6 +943,9 @@ $scripts = @(
 	};
 	{
 		[System.Diagnostics.EventLog]::WriteEntry( 'UnattendGenerator', "User '$env:USERNAME' has requested to unlock the Start menu layout.", [System.Diagnostics.EventLogEntryType]::Information, 1 );
+	};
+	{
+		Remove-Item -LiteralPath "${env:USERPROFILE}\Desktop\Microsoft Edge.lnk" -ErrorAction 'SilentlyContinue' -Verbose;
 	};
 	{
 		reg.exe add "HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32" /ve /f;
@@ -734,7 +990,7 @@ $scripts = @(
 		&amp; 'C:\Windows\Setup\Scripts\SetColorTheme.ps1';
 	};
 	{
-		reg.exe import "C:\Windows\Setup\Scripts\unattend-04.reg";
+		reg.exe import "C:\Windows\Setup\Scripts\unattend-05.reg";
 	};
 	{
 		Get-Process -Name 'explorer' -ErrorAction 'SilentlyContinue' | Where-Object -FilterScript {
@@ -821,7 +1077,7 @@ $scripts = @(
 		reg.exe add "HKU\DefaultUser\Software\Microsoft\Windows\DWM" /v ColorPrevalence /t REG_DWORD /d 0 /f;
 	};
 	{
-		reg.exe import "C:\Windows\Setup\Scripts\unattend-05.reg";
+		reg.exe import "C:\Windows\Setup\Scripts\unattend-06.reg";
 	};
 	{
 		reg.exe add "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\RunOnce" /v "UnattendedSetup" /t REG_SZ /d "powershell.exe -WindowStyle \""Normal\"" -ExecutionPolicy \""Unrestricted\"" -NoProfile -File \""C:\Windows\Setup\Scripts\UserOnce.ps1\""" /f;

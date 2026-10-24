@@ -1,0 +1,13 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\CrashControl]
+; enable bugcheck parameters
+"DisplayParameters"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\TimeZoneInformation]
+; treat BIOS time as UTC
+"RealTimeIsUniversal"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\WindowsNotepad]
+; disable Copilot in Notepad
+"DisableAIFeatures"=dword:00000001
